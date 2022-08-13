@@ -31,7 +31,7 @@ public class PersonService {
         person.setFirstname(personIn.getFirstname());
         person.setLastname(personIn.getLastname());
         person.setUsername(personIn.getUsername());
-        person.setPassword(personIn.getPassword());
+        person.setPassword(passwordEncoder.encode(personIn.getPassword()));
         person.getRoles().add(ERole.ROLE_USER);
 
         try {
